@@ -701,7 +701,7 @@ footer {
   }
 
   .card-image {
-  height: 90%;
+  height: 200px;
   width: auto;
   padding: 25px;
   display: flex;
