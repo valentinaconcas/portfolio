@@ -1,0 +1,251 @@
+// DATABASE PROGETTI CON INFO RECRUITER E LINK ASSET
+const projectsData = {
+  Nalema: {
+    title: "Nalema",
+    subtitle: "Brand Identity, 3D Render",
+    pdfUrl: "presentazioni/NalemaPresentazione.pdf",
+    mockups: [
+      "immagini/nalema1.webp",
+      "immagini/nalema3.webp",
+      "immagini/nalema6.webp",
+      "immagini/nalema8.webp",
+      "immagini/nalema9.webp",
+      "immagini/nalema10.webp",
+      "immagini/nalema11.webp",
+    ],
+    coverUrl: "immagini/header3.webp",
+    liveUrl: "",
+    objective: "Sviluppare l'identità visiva per un brand di candele di fascia alta, sostituendo la fotografia classica con render 3D fotorealistici.",
+    tools: [
+      { name: "Adobe Illustrator", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/illustrator/illustrator-plain.svg" },
+      { name: "Adobe Dimension", icon: "immagini/adobe-dimension-icon.webp" },
+      { name: "Adobe Photoshop", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/photoshop/photoshop-plain.svg" }
+    ],
+    deliverables: [
+      "Logo e Brand Guidelines complete",
+      "Asset 3D di prodotto e packaging"
+    ],
+  },
+
+  scuderia: {
+    title: "Scuderia Country Club",
+    subtitle: "Web Design & Sviluppo WordPress",
+    pdfUrl: "presentazioni/CountryClub.pdf",
+    figmaUrl: "https://www.figma.com/design/c95oMFWcYJrZkKxeEOFO1h/Country--Club?node-id=10-284&t=qzkhGKhIbejkWs02-1",
+    liveUrl: "https://progetto3valentinaconcas.42web.io",
+    coverUrl: "immagini/scuderia.webp",
+    mockups: [],
+    objective: "Realizzare il mockup di una landing page responsive per un maneggio, costruita per rispecchiare fedelmente l’immagine aziendale e migliorare la comunicazione dei servizi attraverso un design chiaro, professionale e accessibile al pubblico.",
+    tools: [
+      { name: "Figma", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/figma/figma-original.svg" },
+      { name: "WordPress", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/wordpress/wordpress-plain.svg" },
+      { name: "HTML5 / CSS3", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg" }
+    ],
+    deliverables: [
+      "Wireframe e Prototipo interattivo Figma",
+      "Sviluppo tema su misura WordPress",
+      "Ottimizzazione delle prestazioni e Mobile"
+    ],
+  },
+
+  cooperativa: {
+    title: "Comunione&Cooperazione",
+    subtitle: "Rebranding & Welcome Kit 3D",
+    pdfUrl: "presentazioni/Cooperativa.pdf",
+    coverUrl: "immagini/scatole1.webp",
+    mockups: [
+      "immagini/cooperativa1.webp",
+      "immagini/cooperativa2.webp",
+      "immagini/cooperativa4.webp",
+      "immagini/cooperativa6.webp",
+    ],
+    objective: "Ammodernare l'immagine coordinata di un'organizzazione no-profit per renderla attrattiva verso nuovi partner e creare un Welcome Kit per i dipendenti.",
+    tools: [
+      { name: "Adobe Illustrator", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/illustrator/illustrator-plain.svg" },
+      {name: "Adobe Dimension", icon: "immagini/adobe-dimension-icon.webp" },
+      { name: "Adobe Photoshop", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/photoshop/photoshop-plain.svg" }
+    ],
+    deliverables: [
+      "Restyling del Marchio e Tipografia",
+      "Mockup 3D di borracce, T-shirt e cancelleria",
+      "Esecutivi di stampa per il kit aziendale"
+    ],
+  },
+
+  hora: {
+    title: "Hora",
+    subtitle: "Landing Page",
+    pdfUrl: "presentazioni/hora_presentazione.pdf",
+    liveUrl: "hora/index.html",
+    figmaUrl: "https://www.figma.com/design/iIhCDeHFQoulJa7jbv3A8f/hora_landing?node-id=0-1&t=mN2uqPRYeCaNUm3n-1",
+    coverUrl: "immagini/header2.webp",
+    objective: "Sviluppare una landing page per acquisire un nuovo segmento di target.",
+    tools: [
+      { name: "Figma", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/figma/figma-original.svg" },
+      { name: "Adobe Illustrator", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/illustrator/illustrator-plain.svg" },
+      { name: "Adobe Photoshop", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/photoshop/photoshop-plain.svg" },
+      { name: "HTML5 / CSS3", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg" }
+    ],
+    deliverables: [
+      "Ideazione Logo del Prodotto",
+      "Design della Landing Page promozionale",
+      "Gerarchia visiva focalizzata sulla Call to Action"
+    ],
+  }
+};
+
+document.addEventListener("DOMContentLoaded", () => {
+
+  // MENU MOBILE
+  const menuToggle = document.getElementById("menuToggle");
+  const navLinks = document.getElementById("navLinks");
+
+  if (menuToggle) {
+    menuToggle.addEventListener("click", () => {
+      navLinks.classList.toggle("active");
+    });
+  }
+
+  // SELEZIONE CORRETTA DELLE CARD
+  const projectCards = document.querySelectorAll(".project-card");
+
+  // MODALE
+  const modal = document.getElementById("projectModal");
+  const modalBody = document.getElementById("modalBody");
+  const modalClose = document.getElementById("modalClose");
+
+  projectCards.forEach(card => {
+    card.addEventListener("click", () => {
+      const projectId = card.getAttribute("data-id");
+      const data = projectsData[projectId];
+
+      if (!data) return;
+
+      // Bottoni azione
+      let actionButtons = "";
+      if (data.liveUrl) {
+        actionButtons += `<a href="${data.liveUrl}" target="_blank" class="btn btn-primary">Visita il Sito Live</a>`;
+      }
+      if (data.figmaUrl) {
+        actionButtons += `<a href="${data.figmaUrl}" target="_blank" class="btn btn-outline">Prototipo Figma</a>`;
+      }
+      if (data.pdfUrl) {
+        actionButtons += `<a href="${data.pdfUrl}" target="_blank" class="btn btn-outline" download> Visualizza la Presentazione</a>`;
+      }
+
+      // Badge tool con Icona e Nome
+      const toolsHtml = data.tools.map(t => `
+        <span class="tool-badge">
+          <img src="${t.icon}" alt="${t.name}" class="tool-icon">
+          <span>${t.name}</span>
+        </span>
+      `).join("");
+
+      // Deliverables
+      const deliverablesHtml = data.deliverables.map(d => `<li>${d}</li>`).join("");
+
+      // HTML MODALE
+      modalBody.innerHTML = `
+        <div>
+          <h2>${data.title}</h2>
+          <p class="subtitle">${data.subtitle}</p>
+        </div>
+
+        <div class="pdf-viewer-container">
+          <img src="${data.coverUrl}" class="pdf-cover" alt="Anteprima Progetto">
+        </div>
+
+        ${data.mockups && data.mockups.length > 0 ? `
+          <div class="mockup-scroll">
+            ${data.mockups.map((img, i) => `
+              <img src="${img}" class="mockup-thumb" data-index="${i}">
+            `).join("")}
+          </div>
+        ` : ""}
+
+        <div class="modal-actions-bar">
+          ${actionButtons}
+        </div>
+
+        <div class="recruiter-summary-box">
+          <h4>Scheda Riassuntiva Progetto</h4>
+          <p><strong>Obiettivo:</strong> ${data.objective}</p>
+
+          <div class="summary-grid">
+            <div class="summary-item">
+              <strong>Software & Tools</strong>
+              <div class="tools-wrapper">${toolsHtml}</div>
+            </div>
+
+            <div class="summary-item">
+              <strong>Risultato</strong>
+              <ul>${deliverablesHtml}</ul>
+            </div>
+          </div>
+        </div>
+      `;
+
+      // Salvo l’ID del progetto nella modale
+      modalBody.dataset.projectId = projectId;
+
+      modal.style.display = "flex";
+      modal.style.flexDirection = "column";
+    });
+  });
+
+  // CHIUSURA MODALE
+  modalClose.addEventListener("click", () => {
+    modal.style.display = "none";
+  });
+
+  window.addEventListener("click", (e) => {
+    if (e.target === modal) {
+      modal.style.display = "none";
+    }
+  });
+
+  // ===============================
+  // MODALE IMMAGINI MOCKUP
+  // ===============================
+
+  const imgModal = document.getElementById("imgModal");
+  const imgModalContent = document.getElementById("imgModalContent");
+  const imgClose = document.getElementById("imgClose");
+  const imgPrev = document.getElementById("imgPrev");
+  const imgNext = document.getElementById("imgNext");
+
+  let currentMockups = [];
+  let currentIndex = 0;
+
+  // Apertura immagine mockup
+  document.addEventListener("click", (e) => {
+    if (e.target.classList.contains("mockup-thumb")) {
+
+      const projectId = modalBody.dataset.projectId;
+      const data = projectsData[projectId];
+
+      currentMockups = data.mockups;
+      currentIndex = parseInt(e.target.dataset.index);
+
+      imgModalContent.src = currentMockups[currentIndex];
+      imgModal.style.display = "flex";
+    }
+  });
+
+  // Navigazione
+  imgPrev.addEventListener("click", () => {
+    currentIndex = (currentIndex - 1 + currentMockups.length) % currentMockups.length;
+    imgModalContent.src = currentMockups[currentIndex];
+  });
+
+  imgNext.addEventListener("click", () => {
+    currentIndex = (currentIndex + 1) % currentMockups.length;
+    imgModalContent.src = currentMockups[currentIndex];
+  });
+
+  // Chiudi
+  imgClose.addEventListener("click", () => {
+    imgModal.style.display = "none";
+  });
+
+});

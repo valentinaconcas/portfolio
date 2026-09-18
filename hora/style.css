@@ -1,0 +1,867 @@
+   
+   body, html {
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden; /* Evita scroll orizzontali fastidiosi */
+    align-items: center;
+    justify-content: center;
+
+   font-family: "Tinos", serif;
+  font-weight: normal;
+  font-style: normal;
+  line-height: 1.5em;
+
+
+}
+
+
+h2{font-size: 28px;
+}
+h3{font-size: 18px;}
+
+p,a,h4,button{font-size: 16px;}
+
+ h2, h3, h4, a, button{
+  
+  font-family: "Roboto Slab", serif;
+  font-optical-sizing: auto;
+  font-weight: bold;
+  font-style: normal;
+   line-height: 1.6em;
+   margin-bottom: 20px;
+}
+
+div{
+    box-sizing: border-box;
+  
+
+}
+section{
+    display: block;
+    width: 100%;
+    height: auto;
+    margin: 135px auto;
+    align-items: center;
+    justify-content: center;
+}
+
+   #menu{
+
+    display: flex;
+    margin: 12px;
+    width: 100%;
+   }
+
+   #navPc{
+    display: none;
+   }
+
+   #navMobile{
+    display: block;
+    width: 100%;
+   }
+
+   #navMMobileimg{
+    width: 8%;
+
+
+   }
+   #icona{
+    width: 40px;
+    float: right;
+    display: block ;
+   clear: both;
+   position:absolute;
+   top: 18px;
+   right: 6px;
+    
+   }
+   #menuMobile{
+    
+    
+    
+    position: absolute;
+    top:60px;
+   right:0;
+    background-color: #fff;
+    
+    padding: 10px 10px 20px 10px;
+    z-index: 3;
+    width: 100%;
+   height: 700px;
+ 
+    flex-direction: column;   /* Allinea gli elementi in colonna */
+    justify-content: center;  /* Centra verticalmente rispetto all'altezza di 800px */
+    align-items: center;      /* Centra orizzontalmente */
+    
+    padding: 20px;
+    box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+   }
+   #menuMobile img{
+    display: none;
+   }
+   #menuMobile a{
+    display: block;
+    padding: 15px;
+    width: 100%;
+    text-decoration: none;
+    color: #333;
+    text-align: center;
+    text-decoration: underline;
+    font-size: 30px;
+    text-underline-offset: 8px;
+   }
+
+   
+   #headerContenitore{
+    position: relative;
+    width: 100%;
+    height: auto;
+   }
+   #pallini{
+  
+      display: block;
+      position: absolute;
+     bottom: 20px;
+      left: 50%;/*mette il contenitore centrato verticalmente, trova il centro e posiziona il primo pallino, per cui il contenitore dei pallini è decentrato verso destra*/
+      transform: translateX(-50%);/*aiuta il posizionamento del contenitore dei pallini, trovando il centro dell' elemento e riposizionando il contenitore dei pallini allineando il centro del contenitore dei pallini con il centro dell' header*/
+     scroll-margin: none; 
+    }
+#immagineHeader{
+    width: 100%;      
+    height: 80%; 
+    min-height: 250px;     
+    object-fit: cover; 
+    display: block;
+    z-index: -1;
+  
+    margin: 0;
+}
+
+.rettangolo{
+  
+   width: 100%;
+  margin: 35px auto;
+   
+}
+.rettangoloR svg{float: right;}
+.rettangoloL svg{float: left;}
+.sezioneTitoli{
+   height: auto;
+   width: 90%;
+   margin: 35px auto;
+  display: block;
+   
+}
+
+.sezioneTitoli h2, .sezioneTitoli h3, .sezioneTitoli p{
+    
+    color: #1A1F29;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+    margin-top: 20px;
+}
+
+button {
+    display: block;
+    margin: 20px auto;
+    padding: 6px 18px;
+    background-color: #fff;
+    color: #1A1F29;
+    
+ 
+    border: none; 
+
+   
+    border-bottom: 3px solid #1A1F29; 
+
+    cursor: pointer;
+
+     border-bottom-left-radius: 4px; 
+     border-bottom-right-radius: 4px; 
+}
+
+
+.filosofia, .eterno{
+ 
+    margin-bottom: 140px;
+}
+
+#immagineuno{
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    display: block;
+    margin: 50px auto;
+   
+}
+#webp{
+    display: none;
+}
+
+#galleriaContainer{
+    display: grid;
+    grid-template-columns: auto auto auto;
+ 
+    width: 60%;
+    height: auto;
+        margin: 50px auto;
+        justify-content: center;
+        align-items: center;
+}
+
+
+#galleriaOrologi{
+    width: auto;
+    margin-left: auto;margin-right: auto;
+    height: auto;
+    object-fit: cover;
+    display: block;
+    margin-bottom: 20px;
+}
+#avanti{
+    margin-left: -40px;
+}
+#indietro{
+    margin-right: -40px;
+}
+.contenitore-immagini-sovrapposte {
+    display: flex;
+    width: 90%;
+       
+        flex-wrap:wrap;
+        flex-direction: row-reverse;
+
+        justify-content: center;
+    margin: 100px auto 0 auto;
+}
+
+.immagine-sfondo {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    display: block;
+    box-shadow: 0 0px 15px rgba(0, 0, 0, 0.3);
+    position: relative;
+}
+.immagine-sfondo img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    display: block;
+    
+    box-shadow: 0 0px 15px rgba(0, 0, 0, 0.3);
+}
+.box-testo {
+    
+    background-color: #1A1F29;
+    padding: 10px 5px;
+    width: 81%;
+    height: auto;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+    position: absolute;
+    margin: -50px auto 150px auto;
+      justify-content: center;
+    display: flex;
+    align-items: center;
+    align-content: center;
+    
+   
+}
+.box-testo p {
+    padding-bottom: 14px;
+}
+.vuoto{
+  
+    width: 90%;
+    height: auto;
+    background-color: #476E78;
+    padding: 10px 5px 20px 5px;
+    margin: auto auto 0 auto;
+    color: #fff;
+    justify-content: center;
+    display: flex;
+    align-items: center;
+    align-content: center;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+ 
+}
+
+.social{
+    margin-top: -180px;
+}
+#griglia{
+
+display: block;
+margin: 50px auto;
+ display: grid;
+ width: 90%;
+ grid-template-columns: auto auto auto;
+ gap: 0px;
+ height: auto;
+
+}
+#griglia img {
+    width: 100%; /* Assicura che le immagini riempiano le colonne della griglia */
+    height: auto;
+    display: block;
+}
+
+#socialContenitore{
+    width: 90%;
+    display: block;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    margin: auto;
+    text-align: center;
+}
+
+#iconeSocial svg {
+    width: 24px;
+    height: 24px;
+    display: block;
+}
+
+#iconeSocial{
+    width: 100%;
+   display: grid;
+   grid-template-columns: auto auto auto;
+   justify-content: center;
+   gap: 50px;
+   margin: 35px auto;
+
+}
+#footerContenitore{
+    width: 100%;
+    height: auto;
+    background-color:none;
+    display: block;
+
+}
+#invio{
+   display: grid;
+        width: 100%;
+        grid-template-columns: 90% 10%;
+        align-items: center;
+        align-content: center;
+        gap: 0;
+       margin: 50px auto;
+}
+#contenitorePiccolo{
+    
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 260px;
+   padding: 10px;
+    background-color: #476E78;
+    color: #fff;
+}
+#invio input{
+    padding: 10px 12px;
+    border: none;
+    border-radius: 80px;
+   
+   
+    
+}
+
+
+#contenitorePiccolo h4, #contenitorePiccolo p{
+   
+    color: #fff;
+      margin-bottom: -10px;
+      text-align: center;
+}
+#contenitorePiccolo p{
+     margin-bottom: -50px;
+}
+#invio i{
+    margin-left: -20px;
+    cursor: pointer;
+    
+}
+
+#feedback{
+    width: 90%;
+    height: auto;
+    text-align: center;
+    margin: -20px auto 0 auto;
+    background-color: #476E78;
+    display: block;
+        justify-content: center;
+
+}
+
+#feedback p{
+    color: #fff;
+    font-weight: bold;
+    text-align: center;
+    font-size: 12px;
+    line-height: 1.2em;
+    font-style: oblique;
+     text-underline-offset: 2px;
+}
+
+
+#contenitoreGrande{
+    width: 100%;
+    height: auto;
+    padding: 20px;
+    background-color: #1A1F29;
+    text-align: center;
+    align-items: center;
+    align-content: center;
+    display:block
+}
+#info, #infoSecondarie{
+    width: 90%;
+    height: auto;
+    padding: 20px;
+   display: block;
+    text-align: center;
+    align-items: center;
+    align-content: center;
+     color: #fff;
+     left: auto;
+        margin: 10px auto;
+}
+#info a{
+    width: 100%;
+    color: #fff;
+    text-decoration: none;
+    display: block;
+    padding: 2px;
+}
+
+.about-text>img{
+    margin-top: 50px;
+}
+
+@media screen and (min-width: 481px) {
+  #griglia{
+
+display: block;
+margin: 50px auto;
+ display: grid;
+ width: 90%;
+ grid-template-columns: auto auto auto;
+ gap: 20px;
+ height: auto;
+
+}
+#menuMobile{
+    
+   
+    width: 100%;
+   
+   
+}
+    
+   
+    
+#menuMobile img{
+    width: 8%;
+    margin-top: 50px
+  
+   }
+
+.contenitore-immagini-sovrapposte {
+  display:grid ;
+   width: 100%;
+    grid-template-columns: 65% 30% ;
+    gap: 5%;
+    margin: 0;
+    grid-template-rows:  auto auto;
+    
+    margin: 50px auto ;
+  
+}
+
+.immagine-sfondo {
+    width:100%;
+   height: 500px;
+}
+
+.immagine-sfondo img {
+    width: 100%;
+    height: 500px;
+        object-fit: cover;
+        object-position:center;
+    display: block;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+}
+
+.immagine-sovrapposta {
+  width: 100%;
+   margin: auto;
+
+}
+.secondoContenitore{
+    display: grid;
+    grid-template-columns: 65% 30%;
+    width: 100%;
+     gap: 5%;
+    margin: 50px auto 50px auto;
+   align-items: center;
+    align-content: center;
+    
+}
+
+
+.immagine-sovrapposta{
+    
+    background-image: url("immagini/Frame 34.png");
+   width: auto;height: 250px;;
+   rotate: 90deg;
+    border-image-repeat: no-repeat;
+        background-size: cover;
+        background-position: center;
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+}
+.vuoto{
+  
+    width: 100%;
+    height: 200px;
+    background-color: #476E78;
+    
+    color: #fff;
+    justify-content: center;
+    display: flex;
+    align-items: center;
+ 
+}
+.vuoto p{
+   
+    font-style: italic;
+    color:#fff;
+    text-align: left;
+    line-height: 2.5em;
+    text-transform: uppercase;
+}
+
+.box-testo {
+    
+    background-color: #1A1F29;
+    padding: 10px;
+    width: 100%;
+    height: 500px;
+   
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    
+ 
+    
+}
+
+.box-testo p {
+    margin: 0;
+    font-style: italic;
+    color:#fff;
+    text-align: right;
+    line-height: 1.5em;
+    text-transform: uppercase;
+
+}
+
+#iconeSocial svg {
+    width: 44px;
+    height: 44px;
+    display: block;
+}
+
+#invio{
+    width: 90%;
+     margin-top: 50px;
+}
+#invio input{
+    padding: 12px 12px;
+   
+}
+#contenitorePiccolo{
+    height: 350px;
+}
+
+#feedback{
+    width: 100%;
+    height: auto;
+    text-align: center;
+    
+ 
+    display: block;
+        justify-content: left;
+       
+
+}
+}
+
+@media screen and (min-width: 1024px) {
+
+h2{font-size: 32px;
+}
+h3{font-size: 20px;}
+p,h4,a,button{font-size: 18px;}
+
+
+
+    #navMobile{
+    display: none;
+    }
+
+    #navPc{
+        display: block;
+        position: absolute;
+        z-index: 2;
+        width: 96%;
+        top: 20px;
+        margin-left: 20px;
+    
+}
+#navPc img{
+    margin-top: 10px;
+}
+#menuPc{
+    float: right;
+    
+     display: block;
+     width: 50%;
+     text-align: right;
+         
+}
+#menuPc a{
+    display: inline-block;
+    padding: 15px;
+    text-decoration: none;
+    color: #fff;
+    text-align: center;
+}
+#menuPc a:hover{
+    color: #476E78;
+    text-decoration: underline;
+    text-underline-offset: 8px;
+    transition: color 0.3s ease;
+}
+
+#headerContenitore{
+    position: relative;
+    width: 100%;
+    height: auto;
+    top: 0;
+    margin-top: -30px;
+    z-index: 0;
+}
+
+
+
+
+.immagine-sovrapposta{
+    
+    background-image: url("immagini/Frame 34.png");
+   width: 60%;height: 350px;;
+    rotate: 90deg;
+    border-image-repeat: no-repeat;
+        background-size: cover;
+        background-position: center;
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+}
+
+.filosofia{
+    display: grid;
+    grid-template-columns: 45% 45%;
+    width: 90%;
+    height: 400px;
+    align-items: center;
+    justify-content: center;
+
+
+}
+
+.filosofia div{
+    display: block;
+    width: 45%;
+    height: 1000px;
+}
+
+#immagineuno{
+    width: 100%;
+    height: 400px;
+    object-fit: cover;
+    display: block;
+}
+
+.filosofia:last-child{
+    display:flex ;
+    flex-wrap: wrap;
+    flex-direction: column;
+  align-items: center;
+    justify-content: center;
+    padding: 5%;
+   
+}
+.filosofia h2, .filosofia p{
+   
+    color: #1A1F29;
+    margin: 0;
+    padding: 0 0 45px 0;
+    text-align: center;
+  
+  
+    
+}
+
+
+#galleriaContainer{
+    display: grid;
+    grid-template-columns: auto auto auto;
+    padding: 28px;
+    width: 90%;
+    height: auto;
+        margin: 50px auto;
+
+}
+#galleriaContainer{
+    display: none !important;
+
+}
+#webp{
+    margin: 50px auto;
+    display: flex;
+    flex-direction: row;
+        align-items: center;
+        justify-content: center;
+    width: 60%;
+}
+section{
+margin: 300px auto;
+}
+
+
+.sezioneTitoli h2, .sezioneTitoli h3, .sezioneTitoli p{
+   
+    color: #1A1F29;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+button{
+    margin: 80px auto;
+    font-weight: bold;;
+}
+
+}
+
+
+
+@media screen and (min-width: 1200px) {
+    .contenitore-immagini-sovrapposte {
+        display: grid;
+        width: 90%;
+        max-width: 1200px; /* Evita che diventi troppo largo su monitor giganti */
+        grid-template-columns: 1fr 1fr; 
+        gap: 0;
+        margin: 50px auto 0 auto;
+    }
+
+    /* Usiamo aspect-ratio per garantire quadrati perfetti senza impazzire con le altezze */
+    .contenitore-immagini-sovrapposte {
+        display: grid;
+        grid-template-columns: 1fr 1fr; /* Due colonne perfette */
+        gap: 0;
+        max-width: 1200px;
+        flex-direction: row; /* Sovrascrive il column del mobile */
+    }
+
+    /* Reset posizionamenti per la Grid */
+    .immagine-sfondo, 
+    .box-testo, 
+    .vuoto, 
+    .immagine-sovrapposta {
+        width: 100%;
+        height: 100%;
+        position: relative; /* Importante: resetta l'absolute del mobile */
+        margin: 0;         /* Azzera i margini negativi che spostano i div */
+        top: 0;
+      
+        aspect-ratio: 1 / 1; 
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        gap: 0;
+    }
+
+    .immagine-sfondo img {
+        height: 100%;
+        object-fit: cover;
+    }
+
+    .immagine-sovrapposta {
+        background-image: url("immagini/Frame 34.png");
+        background-size: cover;
+        background-position: center;
+        /* Se vuoi ruotare l'immagine, usa transform senza rompere il layout */
+        transform: rotate(0deg); 
+       
+    }
+
+    .box-testo {
+        padding: 40px;
+        box-sizing: border-box; /* Assicura che il padding non allarghi il div */
+    }
+
+    .secondoContenitore {
+        width: 90%;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        max-width: 1200px;
+        margin: 0px auto;
+        gap: 0;
+    }
+
+    /* Sistemazione Footer e Feedback */
+    #footerContenitore {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        align-items: start;
+    }
+
+    #feedback {
+        margin: 20px auto; /* Rimosso il -130px che faceva sparire il testo */
+        position: static;
+    }
+
+    #invio svg{
+        width: 54px;
+        height: 40px;
+    }
+#footerContenitore{
+    display: grid;
+    grid-template-columns: auto auto;
+}
+#invio{
+    width: 50%;
+     margin-top: -0px;
+}
+#invio input{
+    padding: 12px 12px;
+   
+}
+#contenitorePiccolo,#contenitoreGrande{
+    height: 350px;
+}
+
+#feedback{
+    width: 100%;
+    height: auto;
+    text-align: center;
+    margin: -130px auto 0 auto;
+ 
+    display: block;
+        justify-content: left;
+        font-size: 18px;
+
+}
+}
+    
