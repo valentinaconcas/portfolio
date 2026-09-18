@@ -40,13 +40,12 @@ body {
 .text-center { text-align: center; }
 .bg-white { background-color: var(--bg-white); }
 .dot {
-  display: inline-block; /* FONDAMENTALE: permette di applicare larghezza e altezza */
+  display: inline-block; 
   width: 8px;
   height: 8px;
-  background-color: var(--primary-orange); /* Serve il background per riempirlo */
-  border-radius: 50%; /* 50% basta per renderlo un cerchio perfetto */
-  margin-left: 4px; /* Un piccolo spazio dal testo */
-}
+  background-color: var(--primary-orange); /
+  border-radius: 50%; /
+  margin-left: 4px; /
 
 /* TIPOGRAFIA */
 h1, h2, h3, h4 {
@@ -294,9 +293,12 @@ h1, h2, h3, h4 {
   box-shadow: 0 12px 24px rgba(0,0,0,0.08);
 }
 
-.card-image {
-  height: 400px;
-  width: auto;
+card-image {
+  height: 400px;                         
+  width: 100%;
+  background-size: cover !important;      
+  background-position: center !important; 
+  background-repeat: no-repeat;
   padding: 25px;
   display: flex;
   align-items: flex-end;
@@ -643,7 +645,7 @@ footer {
 }
 
 /* RESPONSIVE */
-@media (max-width: 1080px) {
+@media (max-width: 768px) {
   .hero-grid {
     grid-template-columns: 1fr;
     text-align: center;
@@ -699,12 +701,12 @@ footer {
     grid-template-columns: 1fr; 
     grid-template-rows: auto;
   }
-
-  .card-image {
-  height: 200px;
+.card-image {
+  height: 400px;
   width: auto;
   padding: 25px;
   display: flex;
   align-items: flex-end;
 }
+
 }
