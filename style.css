@@ -373,7 +373,8 @@ h1, h2, h3, h4 {
   color: white;
   cursor: pointer;
   user-select: none;
-  transform: translateY(-50%);
+  height: 800px;
+  width: auto;
 }
 
 .img-nav.prev { left: 40px; }
@@ -538,11 +539,13 @@ h1, h2, h3, h4 {
 
 .modal-close {
   position: absolute;
-  top: 15px; right: 15px;
-  background: none; border: none;
-  font-size: 1.5rem; cursor: pointer;
-  color: var(--text-muted);
+  top: 15px; right: 10px;
+  background: var(--primary-orange); border: none;
+  font-size: 0.8rem; cursor: pointer;
+  color: var(--bg-offwhite);
   transition: var(--transition);
+  border-radius: 2%;
+  padding: 4px;
 }
 
 .modal-close:hover {
@@ -768,4 +771,13 @@ footer {
   .email-display {
     font-size: 1.3rem;
   }
+  .img-modal-content {
+    height: 200px !important;     
+    width: 340px !important;     
+    
+    object-fit: cover;          
+    display: block;
+    margin: 0 auto;
+  }
+}
 }
