@@ -738,7 +738,7 @@ footer {
 
   /* Pop-up PDF Mobile */
 .pdf-viewer-container {
-    height: 100px;            
+    height: 50px;            
     overflow: hidden;
   }
 
