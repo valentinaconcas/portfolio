@@ -737,9 +737,20 @@ footer {
   .img-nav.next { right: 10px; }
 
   /* Pop-up PDF Mobile */
-  .pdf-viewer-container {
-    height: 200px;
+.pdf-viewer-container {
+    height: 160px;            
+    overflow: hidden;
   }
+
+
+  .pdf-cover {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;        
+    object-position: center;  
+    display: block;
+  }
+}
   
   .modal-actions-bar {
     flex-direction: column;
