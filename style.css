@@ -347,11 +347,14 @@ h1, h2, h3, h4 {
 }
 
 .img-modal-content {
-  max-width: 90%;
-  max-height: 90%;
   width: 800px;
   height: 500px;
-  object-fit: contain;
+  max-width: 90vw;
+  max-height: 80vh;
+  object-fit: contain;              
+  background-color: rgba(0, 0, 0, 0.3); 
+  border-radius: 12px;
+  padding: 10px;
 }
 
 .img-close {
@@ -724,12 +727,11 @@ footer {
     scroll-snap-align: start;
   }
 
-  /* Pop-up Modale Galleria Foto Mobile */
   .img-modal-content {
-    width: 95%;
-    height: auto;
-    max-height: 80vh;
+    width: 92vw;
+    height: 55vh;                 
   }
+
 
   .img-nav.prev { left: 10px; }
   .img-nav.next { right: 10px; }
