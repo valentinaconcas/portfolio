@@ -779,5 +779,9 @@ footer {
     display: block;
     margin: 0 auto;
   }
-}
+
+#modalBody h2 {
+    padding-right: 35px; 
+    word-break: break-word;
+  }
 }
