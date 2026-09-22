@@ -783,5 +783,6 @@ footer {
 #modalBody h2 {
     padding-right: 35px; 
     word-break: break-word;
+  font-size: 0.8rem;
   }
 }
