@@ -49,7 +49,7 @@ const projectsData = {
   },
 
   cooperativa: {
-    title: "Comunione&Cooperazione",
+    title: "Comunione&<br>Cooperazione",
     subtitle: "Rebranding & Welcome Kit 3D",
     pdfUrl: "presentazioni/Cooperativa.pdf",
     coverUrl: "immagini/scatole1.webp",
